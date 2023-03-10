@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 1020px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /*@media max-width(600px){
+    max-width: 500px;
+  }*/
+  
+}
