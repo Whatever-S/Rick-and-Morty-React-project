@@ -3,7 +3,7 @@
 .list__wrapper{
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: start;
     flex-direction: row;
     overflow: hidden;
@@ -12,11 +12,16 @@
     width: 240px;
     min-height: 244px;
     background: var(--bg-color);
-    margin: 0 0 24px;
+    margin: 0 5px 24px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
     border-radius: 4px;
     overflow: hidden;
+    color: inherit;
+    cursor:pointer;
     
+    &:visited{
+        color: inherit;
+    }
 
     &__img{
         width: 240px;
@@ -27,6 +32,7 @@
     &__info{
         margin: 12px 16px;
         text-align: start;
+       
     }
 
     &__name{
@@ -44,4 +50,5 @@
         color: var(--text-color-light);
     }
 }
+
 

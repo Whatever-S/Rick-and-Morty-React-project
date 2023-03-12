@@ -6,14 +6,17 @@ class SearchPanel extends Component {
     constructor(props){
         super(props);
         this.state = {
-            term: ''
+            search: localStorage.getItem('search') ? localStorage.getItem ('search'):''
         }
     }
 
+    
     onUpdateSearch = (e) =>{
-        const term = e.target.value;
-        this.setState({term});
-        this.props.onUpdateSearch(term)
+        const search = e.target.value;
+        this.setState({search});
+        localStorage.setItem('search', search)
+        this.props.updateSearch(localStorage.getItem('search'))
+        
     }
     
     render(){
@@ -21,7 +24,7 @@ class SearchPanel extends Component {
             <input type="text"
             className='search-form'
             placeholder="Find by name..." 
-            value={this.state.term}
+            value={this.state.search}
             onChange={this.onUpdateSearch}/>
         );
     }

@@ -1,0 +1,37 @@
+@import '../../index.css';
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap');
+
+.character__link-back{
+    position: absolute;
+    font-family: 'Karla';
+    color: #000000;
+    text-decoration: none;
+    font-weight: var(--fw-medium);
+    font-size: 18px;
+    line-height: 21px;
+    top: 25px;
+    left: 82px;
+    cursor:pointer;
+
+    &::before{
+        content: url('../../resources/img/Arrow_back.svg');
+        position: absolute;
+        left: -28px;
+        cursor:pointer;
+    }
+}
+
+.character{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    margin-top: 75px;
+
+    &__img{
+        max-height: 300px;
+        max-width: 100%;
+        border: 5px solid #F2F2F7;
+        border-radius: 50%;
+    }
+}
