@@ -7,8 +7,16 @@
   flex-direction: column;
   justify-content: center;
 
-  @media (max-width:750px) {
-    max-width: 500px;
+  @media (max-width:1025px) {
+    max-width: 750px;
+  }
+
+  @media (max-width:768px) {
+    max-width: 550px;
+  }
+
+  @media (max-width:576px) {
+    max-width: 310px;
   }
   
 }

@@ -2,4 +2,8 @@
 .title-img{
     margin: 86px auto 16px;
     max-width: 100%;
+
+    @media (max-width: 576px) {
+        margin: 92px auto 32px;
+    }
 }
