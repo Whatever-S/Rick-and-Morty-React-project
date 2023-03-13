@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 //import { useNavigate } from "react-router-dom";
 
@@ -6,13 +6,11 @@ import '../CharacterPage/CharacterPage.scss'
 
 const CharacterPage = () =>{
     const {id} = useParams();
+    let navigete = useNavigate();
     let _apiBase = `https://rickandmortyapi.com/api/character/${id}`;
     let [receivedData, updateReceivedData] = useState([])
-    let backPath = ''
     
     const {name, species, image, gender, status, type, origin} = receivedData;
-
-    sessionStorage.getItem('search') ? backPath = `/?name=${sessionStorage.getItem('search')}` : backPath = '/' 
 
     useEffect(()=>{
         (async function(){
@@ -25,7 +23,7 @@ const CharacterPage = () =>{
 
     return(
         <>
-        <Link to ={backPath} className="character__link-back">GO BACK</Link>
+        <div onClick={() => navigete(-1)} className="character__link-back">GO BACK</div>
         <div className="character">
             <img src={image} alt='Character img' className="character__img"/>
             <h1 className="character__name">{name}</h1>

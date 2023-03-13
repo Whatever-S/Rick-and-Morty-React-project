@@ -6,6 +6,9 @@ function CharList({characters}){
         counter = 0
 
    if(characters){
+    characters.sort((a,b) => a.name - b.name)
+    console.log(characters)
+
         content = characters.map(char => {
             while(counter < 8) {
             const {name,id, species, image} = char
