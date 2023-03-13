@@ -4,10 +4,7 @@ import CharList from "../components/char-list/Char-list"
 
 import { useEffect, useState } from "react";
 
-const MainPage = () =>{
-    let [receivedData, updateReceivedData] = useState([]),
-        [search, updateSearch] = useState('')
-
+const MainPage = ({ search, updateSearch, receivedData, updateReceivedData }) =>{
     let _apiBase = `https://rickandmortyapi.com/api/character/?name=${search}`;
 
     useEffect(()=>{
@@ -20,7 +17,7 @@ const MainPage = () =>{
     return(
         <>
             <Title/>
-            <SearchPanel updateSearch={updateSearch}/>
+            <SearchPanel updateSearch={updateSearch} search={search}/>
             <CharList page='/' characters={receivedData.results}/>
         </>
     

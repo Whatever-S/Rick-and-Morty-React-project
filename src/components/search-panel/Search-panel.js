@@ -3,28 +3,21 @@ import './search-panel.scss';
 import React, { Component } from 'react';
 
 class SearchPanel extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-            search: sessionStorage.getItem('search') || ''
-        }
     }
 
-    
-    onUpdateSearch = (e) =>{
+    onUpdateSearch = (e) => {
         const search = e.target.value;
-        this.setState({search});
-        sessionStorage.setItem('search', search)
-        this.props.updateSearch(sessionStorage.getItem('search'))
-        
+        this.props.updateSearch(search)
     }
-    
-    render(){
+
+    render() {
         return (
             <input type="text"
             className='search-form'
-            placeholder="Find by name..." 
-            value={this.state.search}
+            placeholder="Find by name..."
+            value={this.props.search}
             onChange={this.onUpdateSearch}/>
         );
     }

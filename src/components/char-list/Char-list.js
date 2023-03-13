@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
+//import { useState, useEffect } from 'react';
 import './char-list.scss';
 
 function CharList({characters}){
     let content,
-        counter = 0
-
+        counter = 0;
+    //let [list, sortList] = useState(characters)
+    
    if(characters){
-    characters.sort((a,b) => a.name - b.name)
-    console.log(characters)
-
         content = characters.map(char => {
             while(counter < 8) {
             const {name,id, species, image} = char
