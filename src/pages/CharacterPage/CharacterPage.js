@@ -12,7 +12,7 @@ const CharacterPage = () =>{
     
     const {name, species, image, gender, status, type, origin} = receivedData;
 
-    localStorage.getItem('search') ? backPath = `/?name=${localStorage.getItem('search')}` : backPath = '/' 
+    sessionStorage.getItem('search') ? backPath = `/?name=${sessionStorage.getItem('search')}` : backPath = '/' 
 
     useEffect(()=>{
         (async function(){

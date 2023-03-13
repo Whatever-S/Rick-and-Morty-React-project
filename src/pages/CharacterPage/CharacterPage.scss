@@ -19,6 +19,10 @@
         left: -28px;
         cursor:pointer;
     }
+
+    @media (max-width: 576px){
+        left: 56px;
+    }
 }
 
 .character{
@@ -28,10 +32,99 @@
     flex-direction: column;
     margin-top: 75px;
 
+    @media (max-width: 576px){
+        margin-top: 119px;
+    }
+
     &__img{
-        max-height: 300px;
+        max-height: 305px;
         max-width: 100%;
         border: 5px solid #F2F2F7;
         border-radius: 50%;
+
+        @media (max-width: 576px){
+            max-height: 155px;
+        }
+    }
+
+    &__name{
+        margin-top: 9px;
+        margin-bottom: 48px;
+        font-weight: var(--fw-regular);
+        font-size: 48px;
+        line-height: 56px;
+
+        @media (max-width: 576px){
+            margin: 34px auto;
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+
+    &__card-item{
+        padding-left: 16px;
+        padding-top: 9px;
+        padding-bottom: 12px;
+        width: 400px;
+        height: 64px;
+        //border-bottom: 1px solid var(--text-color-light);
+
+        &::after {
+            display: block;
+            width:inherit;
+            content: '';
+            position: relative;
+            border-bottom: 1px solid var(--text-color-light);
+            opacity: 0.1;
+            top:11px;
+            @media (max-width: 576px){
+                width:300px;
+            }
+            @media (max-width: 350px){
+                width:250px;
+            }
+        }
+
+        @media (max-width: 576px){
+            width:300px;
+        }
+        @media (max-width: 350px){
+            width:250px;
+            padding-left: 5px;
+        }
+    }
+}
+
+h3{
+    color:#8E8E93;
+    margin-bottom: 48px;
+    font-weight: var(--fw-medium);
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    text-align: center;
+
+    @media (max-width: 576px){
+        text-align: start;
+        margin-bottom: 16px;
+    }
+}
+
+.item{
+    
+    &__title{
+        font-weight: var(--fw-bold);
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color:var(--text-color-dark)
+    }
+    
+    &__info{
+        font-weight: var(--fw-regular);
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        color:var(--text-color-light)
     }
 }

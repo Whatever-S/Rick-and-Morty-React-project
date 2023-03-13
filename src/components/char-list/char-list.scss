@@ -18,6 +18,10 @@
     overflow: hidden;
     color: inherit;
     cursor:pointer;
+
+    &:hover{
+        transform: scale(1.05);
+    }    
     
     &:visited{
         color: inherit;

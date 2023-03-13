@@ -6,7 +6,7 @@ class SearchPanel extends Component {
     constructor(props){
         super(props);
         this.state = {
-            search: localStorage.getItem('search') ? localStorage.getItem ('search'):''
+            search: sessionStorage.getItem('search') || ''
         }
     }
 
@@ -14,8 +14,8 @@ class SearchPanel extends Component {
     onUpdateSearch = (e) =>{
         const search = e.target.value;
         this.setState({search});
-        localStorage.setItem('search', search)
-        this.props.updateSearch(localStorage.getItem('search'))
+        sessionStorage.setItem('search', search)
+        this.props.updateSearch(sessionStorage.getItem('search'))
         
     }
     
