@@ -7,10 +7,22 @@ function CharList({characters}){
         counter = 0;
     //let [list, sortList] = useState(characters)
     
-   if(characters){
+    function getSortOrder(prop) {    
+        return function(a, b) {    
+            if (a[prop] > b[prop]) {    
+                return 1;    
+            } else if (a[prop] < b[prop]) {    
+                return -1;    
+            }    
+            return 0;    
+        }    
+    } 
+    
+    if(characters){
+        characters.sort(getSortOrder("name"))
         content = characters.map(char => {
             while(counter < 8) {
-            const {name,id, species, image} = char
+            const {name, id, species, image} = char
             counter++;
 
             return (
@@ -23,15 +35,15 @@ function CharList({characters}){
             </Link>
             )}
     })
-   }
-   else{
+    }
+    else{
     content = "There is no character with such name..."
-   }
+    }
     return (
     <div className='list__wrapper'>
         {content}
     </div>
-   )
+    )
 }
 
 export default CharList

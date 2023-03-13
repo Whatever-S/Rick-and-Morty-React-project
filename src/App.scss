@@ -1,4 +1,4 @@
-
+@import '//index.css';
 
 .container{
   margin: 0 auto;
@@ -19,4 +19,34 @@
     max-width: 310px;
   }
   
+}
+
+.login{
+  position: absolute;
+  top: 20px;
+  right: 25px;
+
+  &__greeting{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: right;
+  }
+
+  &__singout{
+    position: absolute;
+    right: 5px;
+    width: 100px;
+    height: 25px;
+    background-color: transparent;
+    font-size: 14px;
+    border: 1px solid var(--text-color-dark);
+    border-radius: 5px;
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+
+    &:hover{
+      transform: scale(1.05);
+    } 
+  }
+
 }

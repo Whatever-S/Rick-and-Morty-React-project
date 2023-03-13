@@ -3,9 +3,6 @@ import './search-panel.scss';
 import React, { Component } from 'react';
 
 class SearchPanel extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     onUpdateSearch = (e) => {
         const search = e.target.value;
