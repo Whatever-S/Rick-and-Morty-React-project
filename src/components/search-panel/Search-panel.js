@@ -6,6 +6,7 @@ class SearchPanel extends Component {
 
     onUpdateSearch = (e) => {
         const search = e.target.value;
+        sessionStorage.setItem('search', search)
         this.props.updateSearch(search)
     }
 
@@ -14,7 +15,7 @@ class SearchPanel extends Component {
             <input type="text"
             className='search-form'
             placeholder="Find by name..."
-            value={this.props.search}
+            value={ sessionStorage.getItem('search')}
             onChange={this.onUpdateSearch}/>
         );
     }

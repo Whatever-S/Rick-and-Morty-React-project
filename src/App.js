@@ -8,7 +8,7 @@ import './App.scss'
 
 function App() {
   let [receivedData, updateReceivedData] = useState([]),
-      [search, updateSearch] = useState(''),
+      [search, updateSearch] = useState(sessionStorage.getItem('search') || ''),
       [user, setUser] = useState({});
 
   function handleCallbackResponse(response){
